@@ -1,0 +1,102 @@
+﻿<%@ Master Language="VB" CodeFile="QuantaMastePage.master.vb" Inherits="QuantaMastePage" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta charset="utf-8">
+    <title>Restricciones</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="Css/QuantaCSS.css" rel="stylesheet" />
+    <%--<link href="http://qlapit02/Quanta/app/css/QuantaCSS.css" rel="stylesheet" />--%>
+    <link href="CSS/MessageBox.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>    
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="background:#f3f4ee;">
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="True"></asp:ScriptManager>
+    <div>
+       
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+         
+        </asp:ContentPlaceHolder>
+
+        <asp:Label ID="lbl_error" runat="server" CssClass="labelErrores"></asp:Label>
+
+    </div>
+    </form>
+    <style>
+         body {
+            margin:0;
+            padding:0;
+        }
+        .Menu_class {
+            background-color:#2c3e50;
+            width:100%;
+            /*padding: 20px 0px;*/
+            margin:0;
+            padding:0;
+            font-size:16px;
+             box-shadow: 4px 4px 1.5px #888888;
+
+        }
+            .Menu_class li.static {
+                 padding: 20px 0px;
+            }
+            .Menu_class a {
+                color:white;
+                margin:0px 30px;
+                padding: 20px 0px;
+            }
+                .Menu_class a:hover {                   
+                    transition:1s;
+                    color:   #2c3e50;
+                     background-color: white !important;                 
+                }
+        .MenuItem_selected {
+            color:tomato;
+        }
+        .selectedMenuItem {
+            background: #FFFFFF !important;
+            text-decoration: none;
+            color: #333333;
+        }
+        .menu {
+             background-color: #680840
+        }
+        .menu a.static:hover {
+             background-color: #680840 !important;
+        }
+        .menu a.static.selected
+        {
+            background-color: #680840 !important;
+            color: #FFF !important;
+            text-decoration: none !important;           
+           padding: 20px 0px;
+        }
+        .level2 {
+              background-color:#2c3e50;
+              padding:5px 8px !important;
+              margin:0 !important;
+        }
+    </style>  
+
+    <script>
+        function Yes() {
+            document.getElementById("wholePage").style.display = "none";
+            document.getElementById("messageBox").style.display = "none";
+            //javascript: location.reload();
+        };
+
+        //MENU ACTIVE COLOR
+        $('#MainContent_Menu1 ul li').click(function () {
+
+            //alert();
+            $('#MainContent_Menu1 ul li').removeClass("non-active");
+            $(this).addClass("active");
+        });
+    </script>   
+      
+</body>
+</html>
